@@ -3,16 +3,23 @@ name: Deploy Angular to GitHub Pages
 on:
   workflow_call:
     inputs:
-      node_version:
+      working_directory:
         required: false
         type: string
-        default: "24"
+        default: "."
+
       base_href:
         required: true
         type: string
+
       publish_dir:
         required: true
         type: string
+
+      environments_variables:
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -26,12 +33,24 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ inputs.node_version }}
+          node-version: 'lts/*'
 
       - name: Instalar dependencias
+        working-directory: ${{ inputs.working_directory }}
         run: npm ci
 
+      - name: Crear Environment.ts
+        if: ${{ inputs.environments_variables != '' }}
+        working-directory: ${{ inputs.working_directory }}
+        run: |
+          mkdir -p src/environments
+
+          cat > src/environments/environment.ts <<EOL
+          export const environment = ${{ inputs.environments_variables }}
+          EOL
+
       - name: Build Angular
+        working-directory: ${{ inputs.working_directory }}
         run: npm run build -- --configuration production --base-href "${{ inputs.base_href }}"
 
       - name: Copiar index.html a 404.html
