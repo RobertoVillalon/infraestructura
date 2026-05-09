@@ -16,7 +16,7 @@ on:
         required: true
         type: string
 
-      environments_variables:
+      environment_object:
         required: false
         type: string
         default: ''
@@ -40,13 +40,13 @@ jobs:
         run: npm ci
 
       - name: Crear Environment.ts
-        if: ${{ inputs.environments_variables != '' }}
+        if: ${{ inputs.environment_object != '' }}
         working-directory: ${{ inputs.working_directory }}
         run: |
           mkdir -p src/environments
 
           cat > src/environments/environment.ts <<EOL
-          export const environment = ${{ inputs.environments_variables }}
+          export const environment =  secrets[inputs.environment_object] 
           EOL
 
       - name: Build Angular
