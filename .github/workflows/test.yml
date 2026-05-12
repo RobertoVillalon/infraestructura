@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Crear Environment.ts
         env:
-          SECRETS_ENV: toJson(secrets)
+          SECRETS_ENV: fromJSON(secrets)
         run: |
           VALUE=$(jq -r '.my_key' $SECRETS_ENV)
           echo "Value is $VALUE"
