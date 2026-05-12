@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Crear Environment.ts
-        env:
-          SECRETS_ENV: fromJSON(secrets)
-        run: |
-          VALUE=$(jq -r '.my_key' $SECRETS_ENV)
-          echo "Value is $VALUE"
+    - name: Debug available secrets
+      env:
+        SECRETS_JSON: ${{ toJSON(secrets) }}
+    
+      run: |
+        echo "$SECRETS_JSON" | jq 'keys'
