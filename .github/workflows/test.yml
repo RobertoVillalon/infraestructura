@@ -1,0 +1,19 @@
+name: Test Functionabilities
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Crear Environment.ts
+        env:
+          SECRETS_ENV: toJson(secrets)
+        run: |
+          VALUE=$(jq -r '.my_key' $SECRETS_ENV)
+          echo "Value is $VALUE"
