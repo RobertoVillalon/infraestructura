@@ -30,9 +30,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: RobertoVillalon/infraestructura
-          path: infra
 
       - uses: actions/setup-node@v4
         with:
@@ -48,7 +45,7 @@ jobs:
         env:
           SECRETS_JSON: ${{ toJSON(secrets) }}
           ENV_KEYS: ${{ inputs.environment_keys }}
-        run: bash scripts/generate-angular-env.sh
+        run: bash ../../infra/scripts/generate-angular-env.sh
 
       - name: Build Angular
         working-directory: ${{ inputs.working_directory }}
