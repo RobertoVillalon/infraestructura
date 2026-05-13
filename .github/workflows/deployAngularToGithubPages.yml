@@ -39,6 +39,9 @@ jobs:
         working-directory: ${{ inputs.working_directory }}
         run: npm ci
 
+      - name: Debug connection
+        run: bash ./scripts/test-connection.sh
+
       - name: Crear Environment.ts
         if: ${{ inputs.environment_keys != '' }}
         working-directory: ${{ inputs.working_directory }}
