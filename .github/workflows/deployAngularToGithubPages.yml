@@ -29,7 +29,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout infra repo
+        uses: actions/checkout@v4
+
+      - name: Checkout infra repo
+        uses: actions/checkout@v4
+        with:
+          repository: RobertoVillalon/infraestructura
+          path: infra
 
       - uses: actions/setup-node@v4
         with:
@@ -40,7 +47,7 @@ jobs:
         run: npm ci
 
       - name: Debug connection
-        run: bash ../../scripts/test-connection.sh
+        run: bash infra/scripts/test-connection.sh
 
       - name: Crear Environment.ts
         if: ${{ inputs.environment_keys != '' }}
