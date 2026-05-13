@@ -46,16 +46,13 @@ jobs:
         working-directory: ${{ inputs.working_directory }}
         run: npm ci
 
-      - name: Debug connection
-        run: bash infra/scripts/test-connection.sh
-
       - name: Crear Environment.ts
         if: ${{ inputs.environment_keys != '' }}
         working-directory: ${{ inputs.working_directory }}
         env:
           SECRETS_JSON: ${{ toJSON(secrets) }}
           ENV_KEYS: ${{ inputs.environment_keys }}
-        run: bash ./scripts/generate-angular-env.sh
+        run: bash infra/scripts/generate-angular-env.sh
 
       - name: Build Angular
         working-directory: ${{ inputs.working_directory }}
