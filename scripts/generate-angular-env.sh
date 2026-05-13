@@ -14,24 +14,15 @@ for key in "${KEYS[@]}"; do
     value=$(echo "$SECRETS_JSON" | jq -r --arg k "$key" '.[$k]')
 
     if [ "$value" = "null" ] || [ -z "$value" ]; then
-    echo "Secret '$key' not found, skipping..."
-    continue
+        echo "Secret '$key' not found, skipping..."
+        continue
     fi
 
     if [ "$FIRST" = true ]; then
-    FIRST=false
+        FIRST=false
     else
-    echo "," >> src/environments/environment.ts
+        echo "," >> src/environments/environment.ts
     fi
-
-    js_key=$(echo "$key" | awk -F'_' '
-    {
-    result=tolower($1)
-    for (i=2; i<=NF; i++) {
-        result=result toupper(substr($i,1,1)) tolower(substr($i,2))
-    }
-    print result
-    }')
 
     echo "  $js_key: \"$value\"" >> src/environments/environment.ts
 done
