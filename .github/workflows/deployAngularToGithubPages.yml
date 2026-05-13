@@ -40,7 +40,7 @@ jobs:
         run: npm ci
 
       - name: Debug connection
-        run: bash ./scripts/test-connection.sh
+        run: bash ../../scripts/test-connection.sh
 
       - name: Crear Environment.ts
         if: ${{ inputs.environment_keys != '' }}
