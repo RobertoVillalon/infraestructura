@@ -24,6 +24,10 @@ for key in "${KEYS[@]}"; do
         echo "," >> src/environments/environment.ts
     fi
 
+    js_key=$(echo "$key" | awk -F'_' '{
+        print $1
+    }')
+
     echo "  $js_key: \"$value\"" >> src/environments/environment.ts
 done
 
