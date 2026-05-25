@@ -1,0 +1,114 @@
+{
+  "Angular": {
+    "icon": "icon-[devicon-plain--angular]",
+    "color": "text-red-600"
+  },
+  "TypeScript": {
+    "icon": "icon-[devicon-plain--typescript]",
+    "color": "text-blue-600"
+  },
+  "JavaScript": {
+    "icon": "icon-[devicon-plain--javascript]",
+    "color": "text-yellow-300"
+  },
+  "HTML": {
+    "icon": "icon-[devicon-plain--html5]",
+    "color": "text-orange-600"
+  },
+  "CSS": {
+    "icon": "icon-[devicon-plain--css3]",
+    "color": "text-blue-600"
+  },
+  "React.js": {
+    "icon": "icon-[tabler--brand-react]",
+    "color": "text-blue-400"
+  },
+  "React Router": {
+    "icon": "icon-[devicon-plain--reactrouter]",
+    "color": "text-red-500"
+  },
+  "Leaflet": {
+    "icon": "icon-[tabler--map-pin]",
+    "color": "text-green-600"
+  },
+  "OpenStreetMap": {
+    "icon": "icon-[tabler--map-pin]",
+    "color": "text-blue-600"
+  },
+  "Node.js": {
+    "icon": "icon-[devicon-plain--nodejs]",
+    "color": "text-green-600"
+  },
+  "Java": {
+    "icon": "icon-[devicon-plain--java]",
+    "color": "text-red-600"
+  },
+  "Kotlin": {
+    "icon": "icon-[devicon-plain--kotlin]",
+    "color": "text-purple-600"
+  },
+  "C": {
+    "icon": "icon-[devicon-plain--cplusplus]",
+    "color": "text-blue-600"
+  },
+  "Spring": {
+    "icon": "icon-[devicon-plain--spring]",
+    "color": "text-green-600"
+  },
+  "Spring Boot": {
+    "icon": "icon-[devicon-plain--spring]",
+    "color": "text-green-600"
+  },
+  "Spring Security": {
+    "icon": "icon-[devicon-plain--spring]",
+    "color": "text-green-600"
+  },
+  "Hibernate": {
+    "icon": "icon-[devicon-plain--hibernate]",
+    "color": "text-orange-600"
+  },
+  "JSP": {
+    "icon": "icon-[devicon-plain--java]",
+    "color": "text-red-600"
+  },
+  "PostgreSQL": {
+    "icon": "icon-[devicon-plain--postgresql]",
+    "color": "text-blue-600"
+  },
+  "MySQL": {
+    "icon": "icon-[devicon-plain--mysql]",
+    "color": "text-blue-600"
+  },
+  "JWT": {
+    "icon": "icon-[devicon-plain--jwt]",
+    "color": "text-yellow-600"
+  },
+  "Apache Lucene": {
+    "icon": "icon-[devicon-plain--apache]",
+    "color": "text-orange-600"
+  },
+  "Apache Tika": {
+    "icon": "icon-[devicon-plain--apache]",
+    "color": "text-orange-600"
+  },
+  "Github Actions": {
+    "icon": "icon-[devicon-plain--githubactions]",
+    "color": "text-orange-600"
+  },
+  "AWS": {
+    "icon": "icon-[devicon-plain--amazonwebservices]",
+    "color": "text-orange-500"
+  },
+  "Docker": {
+    "icon": "icon-[devicon-plain--docker]",
+    "color": "text-blue-500"
+  },
+  "Kubernetes": {
+    "icon": "icon-[devicon-plain--kubernetes]",
+    "color": "text-blue-600"
+  },
+  "Jetpack Compose": {
+    "icon": "icon-[devicon-plain--jetpackcompose]",
+    "color": "text-purple-600"
+  }
+}
