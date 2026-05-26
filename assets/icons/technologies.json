@@ -1,114 +1,114 @@
 {
   "Angular": {
-    "icon": "icon-[devicon-plain--angular]",
-    "color": "text-red-600"
+    "class": "icon-[devicon-plain--angular]",
+    "colorClass": "text-red-600"
   },
   "TypeScript": {
-    "icon": "icon-[devicon-plain--typescript]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--typescript]",
+    "colorClass": "text-blue-600"
   },
   "JavaScript": {
-    "icon": "icon-[devicon-plain--javascript]",
-    "color": "text-yellow-300"
+    "class": "icon-[devicon-plain--javascript]",
+    "colorClass": "text-yellow-300"
   },
   "HTML": {
-    "icon": "icon-[devicon-plain--html5]",
-    "color": "text-orange-600"
+    "class": "icon-[devicon-plain--html5]",
+    "colorClass": "text-orange-600"
   },
   "CSS": {
-    "icon": "icon-[devicon-plain--css3]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--css3]",
+    "colorClass": "text-blue-600"
   },
   "React.js": {
-    "icon": "icon-[tabler--brand-react]",
-    "color": "text-blue-400"
+    "class": "icon-[tabler--brand-react]",
+    "colorClass": "text-blue-400"
   },
   "React Router": {
-    "icon": "icon-[devicon-plain--reactrouter]",
-    "color": "text-red-500"
+    "class": "icon-[devicon-plain--reactrouter]",
+    "colorClass": "text-red-500"
   },
   "Leaflet": {
-    "icon": "icon-[tabler--map-pin]",
-    "color": "text-green-600"
+    "class": "icon-[tabler--map-pin]",
+    "colorClass": "text-green-600"
   },
   "OpenStreetMap": {
-    "icon": "icon-[tabler--map-pin]",
-    "color": "text-blue-600"
+    "class": "icon-[tabler--map-pin]",
+    "colorClass": "text-blue-600"
   },
   "Node.js": {
-    "icon": "icon-[devicon-plain--nodejs]",
-    "color": "text-green-600"
+    "class": "icon-[devicon-plain--nodejs]",
+    "colorClass": "text-green-600"
   },
   "Java": {
-    "icon": "icon-[devicon-plain--java]",
-    "color": "text-red-600"
+    "class": "icon-[devicon-plain--java]",
+    "colorClass": "text-red-600"
   },
   "Kotlin": {
-    "icon": "icon-[devicon-plain--kotlin]",
-    "color": "text-purple-600"
+    "class": "icon-[devicon-plain--kotlin]",
+    "colorClass": "text-purple-600"
   },
   "C": {
-    "icon": "icon-[devicon-plain--cplusplus]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--cplusplus]",
+    "colorClass": "text-blue-600"
   },
   "Spring": {
-    "icon": "icon-[devicon-plain--spring]",
-    "color": "text-green-600"
+    "class": "icon-[devicon-plain--spring]",
+    "colorClass": "text-green-600"
   },
   "Spring Boot": {
-    "icon": "icon-[devicon-plain--spring]",
-    "color": "text-green-600"
+    "class": "icon-[devicon-plain--spring]",
+    "colorClass": "text-green-600"
   },
   "Spring Security": {
-    "icon": "icon-[devicon-plain--spring]",
-    "color": "text-green-600"
+    "class": "icon-[devicon-plain--spring]",
+    "colorClass": "text-green-600"
   },
   "Hibernate": {
-    "icon": "icon-[devicon-plain--hibernate]",
-    "color": "text-orange-600"
+    "class": "icon-[devicon-plain--hibernate]",
+    "colorClass": "text-orange-600"
   },
   "JSP": {
-    "icon": "icon-[devicon-plain--java]",
-    "color": "text-red-600"
+    "class": "icon-[devicon-plain--java]",
+    "colorClass": "text-red-600"
   },
   "PostgreSQL": {
-    "icon": "icon-[devicon-plain--postgresql]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--postgresql]",
+    "colorClass": "text-blue-600"
   },
   "MySQL": {
-    "icon": "icon-[devicon-plain--mysql]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--mysql]",
+    "colorClass": "text-blue-600"
   },
   "JWT": {
-    "icon": "icon-[devicon-plain--jwt]",
-    "color": "text-yellow-600"
+    "class": "icon-[devicon-plain--jwt]",
+    "colorClass": "text-yellow-600"
   },
   "Apache Lucene": {
-    "icon": "icon-[devicon-plain--apache]",
-    "color": "text-orange-600"
+    "class": "icon-[devicon-plain--apache]",
+    "colorClass": "text-orange-600"
   },
   "Apache Tika": {
-    "icon": "icon-[devicon-plain--apache]",
-    "color": "text-orange-600"
+    "class": "icon-[devicon-plain--apache]",
+    "colorClass": "text-orange-600"
   },
   "Github Actions": {
-    "icon": "icon-[devicon-plain--githubactions]",
-    "color": "text-orange-600"
+    "class": "icon-[devicon-plain--githubactions]",
+    "colorClass": "text-orange-600"
   },
   "AWS": {
-    "icon": "icon-[devicon-plain--amazonwebservices]",
-    "color": "text-orange-500"
+    "class": "icon-[devicon-plain--amazonwebservices]",
+    "colorClass": "text-orange-500"
   },
   "Docker": {
-    "icon": "icon-[devicon-plain--docker]",
-    "color": "text-blue-500"
+    "class": "icon-[devicon-plain--docker]",
+    "colorClass": "text-blue-500"
   },
   "Kubernetes": {
-    "icon": "icon-[devicon-plain--kubernetes]",
-    "color": "text-blue-600"
+    "class": "icon-[devicon-plain--kubernetes]",
+    "colorClass": "text-blue-600"
   },
   "Jetpack Compose": {
-    "icon": "icon-[devicon-plain--jetpackcompose]",
-    "color": "text-purple-600"
+    "class": "icon-[devicon-plain--jetpackcompose]",
+    "colorClass": "text-purple-600"
   }
 }
