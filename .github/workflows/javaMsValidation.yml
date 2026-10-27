@@ -15,11 +15,10 @@ on:
         type: string
         required: true
 
-      sonar-project-name:
-        description: SonarQube project name
+      ms-name:
+        description: Microservice name
         type: string
-        required: false
-        default: ''
+        required: true
 
       sonar-organization:
         description: SonarQube Cloud organization key
@@ -54,7 +53,7 @@ jobs:
           distribution: temurin
           java-version: ${{ inputs.java-version }}
           cache: maven
-          cache-dependency-path: ms/pom.xml
+          cache-dependency-path: ${{ inputs.ms-name }}/pom.xml
 
       - name: Validate Java and Maven
         run: |
@@ -62,7 +61,7 @@ jobs:
           mvn -version
 
       - name: 4. Validate Folder Structure
-        working-directory: ms
+        working-directory: ${{ inputs.ms-name }}
         run: |
           test -f pom.xml
           test -d src/main/java
@@ -74,13 +73,13 @@ jobs:
         run: mvn -B clean test
 
       - name: 6. API and Integration Tests
-        working-directory: ms
+        working-directory: ${{ inputs.ms-name }}/
         run: mvn -B verify
 
       - name: 7. Security and Code Quality Analysis
         uses: SonarSource/sonarqube-scan-action@v5
         with:
-          projectBaseDir: ms
+          projectBaseDir: ${{ inputs.ms-name }}/
           args: >
             -Dsonar.organization=${{ inputs.sonar-organization }}
             -Dsonar.projectKey=${{ inputs.sonar-project-key }}
