@@ -39,17 +39,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1. Checkout Infra Repository
+      - name: Checkout ms repo
         uses: actions/checkout@v4
-        with:
-          repository: YOUR_ORG/infra
-          path: infra
-          token: ${{ secrets.INFRA_REPO_TOKEN || github.token }}
 
-      - name: 2. Checkout Microservice Repository
+      - name: Checkout infra repo
         uses: actions/checkout@v4
         with:
-          path: ms
+          repository: RobertoVillalon/infraestructura
+          path: infra
 
       - name: 3. Install Java and Maven
         uses: actions/setup-java@v4
