@@ -2,11 +2,36 @@
 name: Java Microservice Validation
 
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      java-version:
+        description: Java version
+        type: string
+        required: false
+        default: '21'
+
+      sonar-project-key:
+        description: SonarQube project key
+        type: string
+        required: true
+
+      sonar-project-name:
+        description: SonarQube project name
+        type: string
+        required: false
+        default: ''
+
+      sonar-organization:
+        description: SonarQube Cloud organization key
+        type: string
+        required: true
+
+    secrets:
+      SONAR_TOKEN:
+        required: true
+
+      INFRA_REPO_TOKEN:
+        required: false
 
 jobs:
   validate:
@@ -14,11 +39,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout infra repo
+      - name: 1. Checkout Infra Repository
         uses: actions/checkout@v4
         with:
-          repository: RobertoVillalon/infraestructura
+          repository: YOUR_ORG/infra
           path: infra
+          token: ${{ secrets.INFRA_REPO_TOKEN || github.token }}
 
       - name: 2. Checkout Microservice Repository
         uses: actions/checkout@v4
@@ -29,8 +55,9 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: ${{ inputs.java-version }}
           cache: maven
+          cache-dependency-path: ms/pom.xml
 
       - name: Validate Java and Maven
         run: |
@@ -49,10 +76,18 @@ jobs:
         working-directory: ms
         run: mvn -B clean test
 
-      - name: 6. API Tests
+      - name: 6. API and Integration Tests
         working-directory: ms
         run: mvn -B verify
 
-      - name: 7. Security Tests
-        working-directory: ms
-        run: mvn -B org.owasp:dependency-check-maven:check
+      - name: 7. Security and Code Quality Analysis
+        uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          projectBaseDir: ms
+          args: >
+            -Dsonar.organization=${{ inputs.sonar-organization }}
+            -Dsonar.projectKey=${{ inputs.sonar-project-key }}
+            -Dsonar.java.binaries=target/classes
+            -Dsonar.java.test.binaries=target/test-classes
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
