@@ -68,7 +68,6 @@ jobs:
           echo "Project structure validated"
 
       - name: 5. Unit Tests
-        working-directory: ms
         run: mvn -B clean test
 
       - name: 6. API and Integration Tests
