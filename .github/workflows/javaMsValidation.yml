@@ -53,7 +53,7 @@ jobs:
           distribution: temurin
           java-version: ${{ inputs.java-version }}
           cache: maven
-          cache-dependency-path: ${{ inputs.ms-name }}/pom.xml
+          cache-dependency-path: RobertoVillalon/${{ inputs.ms-name }}/pom.xml
 
       - name: Validate Java and Maven
         run: |
