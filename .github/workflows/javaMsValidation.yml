@@ -1,0 +1,58 @@
+
+name: Java Microservice Validation
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate Java Microservice
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout infra repo
+        uses: actions/checkout@v4
+        with:
+          repository: RobertoVillalon/infraestructura
+          path: infra
+
+      - name: 2. Checkout Microservice Repository
+        uses: actions/checkout@v4
+        with:
+          path: ms
+
+      - name: 3. Install Java and Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Validate Java and Maven
+        run: |
+          java -version
+          mvn -version
+
+      - name: 4. Validate Folder Structure
+        working-directory: ms
+        run: |
+          test -f pom.xml
+          test -d src/main/java
+          test -d src/test/java
+          echo "Project structure validated"
+
+      - name: 5. Unit Tests
+        working-directory: ms
+        run: mvn -B clean test
+
+      - name: 6. API Tests
+        working-directory: ms
+        run: mvn -B verify
+
+      - name: 7. Security Tests
+        working-directory: ms
+        run: mvn -B org.owasp:dependency-check-maven:check
