@@ -61,7 +61,6 @@ jobs:
           mvn -version
 
       - name: 4. Validate Folder Structure
-        working-directory: ${{ inputs.ms-name }}
         run: |
           test -f pom.xml
           test -d src/main/java
@@ -73,7 +72,6 @@ jobs:
         run: mvn -B clean test
 
       - name: 6. API and Integration Tests
-        working-directory: ${{ inputs.ms-name }}/
         run: mvn -B verify
 
       - name: 7. Security and Code Quality Analysis
